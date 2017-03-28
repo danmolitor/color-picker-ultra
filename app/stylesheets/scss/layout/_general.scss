@@ -1,0 +1,48 @@
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+// .centered {
+//   text-align: center;
+// }
+
+  @media screen and (min-width: $MEDIUM) and (max-width: $LARGE) {
+  .centered {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: $SMALL) and (max-width: $MEDIUM) {
+  .centered {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: $SMALL) {
+  .centered {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: $LARGE) {
+  .centered {
+    text-align: center;
+  }
+}
+
+.hiding {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+
+}
+
+.showing {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}
