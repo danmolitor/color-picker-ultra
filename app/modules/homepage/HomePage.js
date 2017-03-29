@@ -230,8 +230,18 @@ class HomePage extends React.Component {
                   transitionEnterTimeout={500}
                   transitionLeaveTimeout={300}>
                     {this.state.colors.map((color, index) => {
+                      let non32;
+                      if (color.substr(0, 3) === 'rgb(') {
+                        non32 = 'rgb' + color.substr(color.indexOf('('))
+                      } else if (color.substr(0, 3) === 'rgba') {
+                        non32 = 'rgba' + color.substr(color.indexOf('('))
+                      } else if (color.split('')[0] === 'n') {
+                        non32 = 'rgba' + color.substr(color.indexOf('('))
+                      } else {
+                        non32 = color
+                      }
                       return (
-                        <li key={`${index}`} style={{backgroundColor: `${color}`, color: `#888`}}>{color}</li>
+                        <li key={`${index}`} style={{backgroundColor: `${non32}`, color: `#888`}}>{color}</li>
                       )
                     })}
                 </ReactCSSTransitionGroup>
