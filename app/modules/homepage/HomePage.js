@@ -43,8 +43,8 @@ class HomePage extends React.Component {
         reader.onload = function(event){
           var img = new Image();
           img.onload = function(){
-            canvas.width=400;
-            canvas.height=600;
+            canvas.width=560.88;
+            canvas.height=500;
             ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
           }
           img.src = event.target.result;
@@ -125,7 +125,7 @@ class HomePage extends React.Component {
 
       var img = new Image();
       img.onload = function(){
-        canvas.width=500;
+        canvas.width=560.88;
         canvas.height=500;
         ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
       }
@@ -211,6 +211,11 @@ class HomePage extends React.Component {
           </nav>
         </header>
 
+        <br/>
+        <div className="row">
+            <h3 className="site-title-3">Click on color in the list to remove it.</h3>
+        </div>
+
         <div className="row">
           <div className="col span-1-of-2">
             <div className="row input-file-container">
@@ -242,7 +247,7 @@ class HomePage extends React.Component {
                         non32 = color
                       }
                       return (
-                        <li key={`${index}`} style={{backgroundColor: `${non32}`, color: `#888`}}>{color}</li>
+                        <li key={`${index}`} style={{backgroundColor: `${non32}`, color: `#888`}} onClick={this.removeColor.bind(null, index)}>{color}</li>
                       )
                     })}
                 </ReactCSSTransitionGroup>
