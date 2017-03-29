@@ -51,7 +51,7 @@ class HomePage extends React.Component {
           img.onload = function(){
             canvas.width=500;
             canvas.height=750;
-            ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
           }
           img.src = event.target.result;
         }
@@ -131,9 +131,9 @@ class HomePage extends React.Component {
 
       var img = new Image();
       img.onload = function(){
-        canvas.width=560.88;
+        canvas.width=500;
         canvas.height=500;
-        ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
       }
       img.src = pic;
 
@@ -229,7 +229,7 @@ class HomePage extends React.Component {
             </div>
             <div className="row">
               <div className="canvas-container">
-                <canvas height='400' width='600' id="canvas-picker"></canvas>
+                <canvas height='500' width='500' id="canvas-picker"></canvas>
               </div>
             </div>
           </div>

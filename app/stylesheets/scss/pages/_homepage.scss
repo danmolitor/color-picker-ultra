@@ -134,7 +134,7 @@ h3 {
   }
 
   #canvas-picker {
-    max-width: 100%;
+    // width: 100%;
   }
 
   .example-enter {
@@ -184,6 +184,7 @@ h3 {
 
   .canvas-container {
     height: 425px;
+    width: 100%;
     overflow: scroll;
     border: 1px solid black;
     box-shadow: 1px 1px 1px #333;
