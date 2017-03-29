@@ -49,8 +49,8 @@ class HomePage extends React.Component {
         reader.onload = function(event){
           var img = new Image();
           img.onload = function(){
-            canvas.width=560.88;
-            canvas.height=500;
+            canvas.width=500;
+            canvas.height=750;
             ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
           }
           img.src = event.target.result;
