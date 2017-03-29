@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-
+import GoogleAds from './GoogleAds'
+import GoogleAdsTwo from './GoogleAdsTwo'
 const pic = require('./gradient.png');
 
 class HomePage extends React.Component {
@@ -175,7 +176,7 @@ class HomePage extends React.Component {
             <div className="row">
                 <h3 className="site-title-3">Seriously. Pick as many as you want. Then copy and paste the code.</h3>
             </div>
-
+            <GoogleAds />
             <div className="format-select row">
               <div className="col span-1-of-4"></div>
                 <div className="col span-1-of-4">
@@ -251,8 +252,12 @@ class HomePage extends React.Component {
         </div>
 
         <footer>
+          <div className="row">
+            <GoogleAdsTwo />
+            </div>
           Created by Dan Molitor &copy;
         </footer>
+
       </div>
     )
   }
