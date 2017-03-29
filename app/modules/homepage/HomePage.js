@@ -113,6 +113,7 @@ class HomePage extends React.Component {
   }
   renderPickerType(picker) {
     let canvas = document.getElementById('canvas-picker');
+    document.getElementsByClassName("input-file")[0].value = "";
     let ctx = canvas.getContext('2d');
     ctx.mozImageSmoothingEnabled = false;
     ctx.webkitImageSmoothingEnabled = false;
@@ -123,8 +124,8 @@ class HomePage extends React.Component {
 
       var img = new Image();
       img.onload = function(){
-        canvas.width=400;
-        canvas.height=600;
+        canvas.width=500;
+        canvas.height=500;
         ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
       }
       img.src = pic;
@@ -169,7 +170,7 @@ class HomePage extends React.Component {
                 <h1 className="site-title">COLOR PICKER ULTRA</h1>
             </div>
             <div className="row">
-                <h2 className="site-title-2">Because picking one at a time isn't that fun</h2>
+                <h2 className="site-title-2">Because picking one at a time is no fun</h2>
             </div>
             <div className="row">
                 <h3 className="site-title-3">Seriously. Pick as many as you want. Then copy and paste the code.</h3>
@@ -230,7 +231,7 @@ class HomePage extends React.Component {
                   transitionLeaveTimeout={300}>
                     {this.state.colors.map((color, index) => {
                       return (
-                        <li key={`${index}`}>{color}</li>
+                        <li key={`${index}`} style={{backgroundColor: `${color}`, color: `#888`}}>{color}</li>
                       )
                     })}
                 </ReactCSSTransitionGroup>
