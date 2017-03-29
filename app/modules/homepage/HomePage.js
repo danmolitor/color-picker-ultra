@@ -2,6 +2,7 @@ import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import GoogleAds from './GoogleAds'
 import GoogleAdsTwo from './GoogleAdsTwo'
+import ReactGA from 'react-ga'
 const pic = require('./gradient.png');
 
 class HomePage extends React.Component {
@@ -16,6 +17,11 @@ class HomePage extends React.Component {
       picker: 'upload',
       prefix: ''
     }
+
+    // Add your tracking ID created from https://analytics.google.com/analytics/web/#home/
+    ReactGA.initialize('UA-96353529-1');
+    // This just needs to be called once since we have no routes in this case.
+    ReactGA.pageview(window.location.pathname);
 
     this.readURL = this.readURL.bind(this);
     this.rgbToHex = this.rgbToHex.bind(this);
